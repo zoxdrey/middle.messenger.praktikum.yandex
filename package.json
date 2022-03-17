@@ -20,5 +20,8 @@
   "homepage": "https://github.com/zoxdrey/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
     "parcel": "^2.3.2"
+  },
+  "dependencies": {
+    "mustache": "^4.2.0"
   }
 }
