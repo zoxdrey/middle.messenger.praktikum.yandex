@@ -1,0 +1,10 @@
+---
+aboutTitle: Welcome to about.hbs
+---
+{{!< main}}
+
+<main>
+  <h1>{{aboutTitle}}</h1>
+    {{> navLink href='../../index.hbs' text="Назад"}}
+      {{{body}}}
+</main>
