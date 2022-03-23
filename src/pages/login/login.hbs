@@ -1,9 +1,12 @@
 ---
 loginButtonText: Войти
+stylesheets:
+  - ./login.css
 ---
 
+{{!< main}}
 
-<main>
+<main class="main">
   <h1>{{loginButtonText}}</h1>
   <form class="login-form">
     {{> input type='text' name='login' label='Логин'}}
@@ -11,5 +14,4 @@ loginButtonText: Войти
     {{> button buttonText="Авторизоваться"}}
     {{> navLink text='Нет аккаунта?' href='../register/register.hbs'}}
     </form>
-      {{{body}}}
 </main>

@@ -5,10 +5,13 @@
   <title>
 chat
   </title>
+    {{#block "styles"}}
+    {{#each stylesheets}}
+    <link  rel="stylesheet" href={{this}}/>
+    {{/each}}
+    {{/block}}
 </head>
 <body>
-  <main>
 {{{body}}}
-</main>
 </body>
 </html>

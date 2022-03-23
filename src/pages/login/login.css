@@ -1,0 +1,12 @@
+@import url(../../styles.css);
+
+.login-form {
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #ffffff;
+}
