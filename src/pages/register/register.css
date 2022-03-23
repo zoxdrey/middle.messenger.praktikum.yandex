@@ -54,6 +54,7 @@
   padding: 7px 0 7px 0;
   border-bottom: solid 1px var(--color-main-white);
   color: var(--color-main-white);
+  margin-bottom: 16px;
 }
 
 .form__label {
@@ -65,12 +66,12 @@
   letter-spacing: 0em;
   text-align: left;
   color: var(--color-main-white);
-  margin: 0;
-  padding: 0;
 }
 
 .form__row {
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .form__row:last-of-type {
