@@ -1,0 +1,19 @@
+---
+loginButtonText: Авторизоваться
+---
+
+
+<main>
+  <h1>{{loginButtonText}}</h1>
+  <form class="login-form">
+    {{> input type='text' name='login' label='Логин'}}
+    {{> input type='password' name='password' label='Пароль'}}
+    {{> input type='password' name='password' label='Пароль'}}
+    {{> input type='password' name='password' label='Пароль'}}
+    {{> input type='password' name='password' label='Пароль'}}
+    {{> input type='password' name='password' label='Пароль'}}
+    {{> button buttonText="Зарегистрироваться"}}
+    {{> navLink text='Войти' href='../login/login.hbs'}}
+    </form>
+      {{{body}}}
+</main>

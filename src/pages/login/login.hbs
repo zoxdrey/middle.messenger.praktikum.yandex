@@ -1,10 +1,15 @@
 ---
-aboutTitle: Welcome to about.hbs
+loginButtonText: Войти
 ---
-{{!< main}}
+
 
 <main>
-  <h1>{{aboutTitle}}</h1>
-    {{> navLink href='../../index.hbs' text="Назад"}}
+  <h1>{{loginButtonText}}</h1>
+  <form class="login-form">
+    {{> input type='text' name='login' label='Логин'}}
+    {{> input type='password' name='password' label='Пароль'}}
+    {{> button buttonText="Авторизоваться"}}
+    {{> navLink text='Нет аккаунта?' href='../register/register.hbs'}}
+    </form>
       {{{body}}}
 </main>
