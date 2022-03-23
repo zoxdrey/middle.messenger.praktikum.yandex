@@ -22,6 +22,7 @@
 }
 
 .link {
+  padding: 7px 0 7px 0;
   text-decoration: none;
   font-size: 14px;
   font-style: normal;
@@ -30,4 +31,5 @@
   letter-spacing: 0em;
   text-align: center;
   color: #3369f3;
+  display: block;
 }

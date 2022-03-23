@@ -1,6 +1,6 @@
 ---
 stylesheets:
-  - ./profile.css
+  - ../profile.css
 ---
 
 {{!< main}}
@@ -8,11 +8,11 @@ stylesheets:
 <main class="main">
   
   <div class="backarrow">
-      <img src="../../img/back-arrow.png" class="backarrow__image">
+      <img src="../../../img/back-arrow.png" class="backarrow__image">
   </div>
   <div class="profile">
        <div class="avatar">
-       <img src="../../img/avatar-placeholder.png" class="backarrow__image">
+       <img src="../../../img/avatar-placeholder.png" class="backarrow__image">
         </div>
  
  <form class="form">
@@ -28,14 +28,8 @@ stylesheets:
     {{> input type='text' name='chat-name' label='Имя в чате' placeholder='Иван'}}
         {{> devider}}
     {{> input type='tel' name='telephone' label='Телефон' placeholder='+7(909)9673030'}}
+  {{> button buttonText="Сохранить"}}
  </form>
- <div class="profile__links">
-     {{> navLink text='Изменить данные' href='./changeProfileData/changeProfile.hbs'}}
-      {{> devider}}
-      {{> navLink text='Изменить пароль' href='./changeProfileData/changePassword.hbs'}}
-       {{> devider}}
-        {{> navLink text='Выйти' href='../../index.hbs'}}
- </div>
   </div>
   
 </main>

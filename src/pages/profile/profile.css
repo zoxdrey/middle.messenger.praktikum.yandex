@@ -1,5 +1,18 @@
 @import url(../../styles.css);
 
+.backarrow {
+  align-self: flex-start;
+  margin-left: 20px;
+}
+
+@import url(../../styles.css);
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .form__title {
   font-size: 20px;
   font-style: normal;
@@ -41,6 +54,7 @@
 }
 
 .form__input {
+  text-align: right;
   max-width: 280px;
   width: 280px;
   border: none;
@@ -50,16 +64,15 @@
   font-weight: 500;
   line-height: 13px;
   letter-spacing: 0em;
-  text-align: left;
   padding: 7px 0 7px 0;
-  border-bottom: solid 1px var(--color-main-white);
   color: var(--color-main-white);
-  margin-bottom: 16px;
 }
 
 .form__label {
-  text-align: start;
-  font-size: 9px;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 9px;
@@ -70,12 +83,27 @@
   padding: 0;
 }
 
+.devider {
+  height: 1px;
+  background-color: var(--color-main-white);
+  width: 280px;
+  margin-bottom: 16px;
+}
+
 .form__row {
   text-align: left;
   display: flex;
-  flex-direction: column;
+  max-width: 280px;
 }
 
 .form__row:last-of-type {
   margin-bottom: 160px;
+}
+
+.link:last-of-type {
+  color: red;
+}
+
+.link {
+  text-align: left;
 }
