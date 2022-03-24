@@ -14,4 +14,4 @@ https://strong-jelly-0d28ad.netlify.app/
 
 Sprint 1
 
-Ссыдка на пр: https://github.com/zoxdrey/middle.messenger.praktikum.yandex/pull/3
+Ссыдка на пр: https://github.com/zoxdrey/middle.messenger.praktikum.yandex/pull/4
