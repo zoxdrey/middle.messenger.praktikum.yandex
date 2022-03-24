@@ -11,3 +11,7 @@ https://www.figma.com/file/8T3eBXoJgSH4B7QEbRRPka/middle_ya_sprint_1_petrov?node
 Netify
 
 https://strong-jelly-0d28ad.netlify.app/
+
+Sprint 1
+
+Ссыдка на пр: https://github.com/zoxdrey/middle.messenger.praktikum.yandex/pull/3
