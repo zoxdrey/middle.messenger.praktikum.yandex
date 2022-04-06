@@ -1,0 +1,41 @@
+---
+stylesheets:
+  - ./profile.css
+---
+
+{{!< main}}
+
+<main class="main">
+
+  <div class="backarrow">
+      <img src="../../img/back-arrow.png" class="backarrow__image">
+  </div>
+  <div class="profile">
+       <div class="avatar">
+       <img src="../../img/avatar-placeholder.png" class="backarrow__image">
+        </div>
+
+ <form class="form">
+ <h1 class="form__title">Иван</h1>
+    {{> input type='email' name='email' label='Почта' placeholder='pochta@yandex.ru'}}
+    {{> devider}}
+    {{> input type='text' name='login' label='Логин' placeholder='ivanivanov'}}
+        {{> devider}}
+    {{> input type='text' name='name' label='Имя' placeholder='Иван'}}
+        {{> devider}}
+    {{> input type='text' name='subname' label='Фамилия' placeholder='Иванов'}}
+        {{> devider}}
+    {{> input type='text' name='chat-name' label='Имя в чате' placeholder='Иван'}}
+        {{> devider}}
+    {{> input type='tel' name='telephone' label='Телефон' placeholder='+7(909)9673030'}}
+ </form>
+ <div class="profile__links">
+     {{> navLink text='Изменить данные' href='./changeProfileData/changeProfile.hbs'}}
+      {{> devider}}
+      {{> navLink text='Изменить пароль' href='./changeProfileData/changePassword.hbs'}}
+       {{> devider}}
+        {{> navLink text='Выйти' href='../../index.hbs'}}
+ </div>
+  </div>
+
+</main>
