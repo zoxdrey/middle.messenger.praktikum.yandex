@@ -1,2 +1,16 @@
-<div>тут будет чат</div>
+---
+stylesheets:
+  - ./chat.css
+---
+
+{{!< main}}
+
+
+<main class="main">
+    <div class="chat-container"> 
+        {{> chatList }}
+    {{> messageList }}</div>
+     
+</main>
+
 {{> navLink href='../../index.hbs' text='Назад'}}
