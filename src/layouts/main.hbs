@@ -14,4 +14,9 @@
 <body>
 {{{body}}}
 </body>
+ {{#block "scripts"}}
+    {{#each scripts}}
+      <script src={{this}} > </script>
+    {{/each}}
+  {{/block}}
 </html>
