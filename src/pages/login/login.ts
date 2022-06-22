@@ -1,17 +1,38 @@
-function isNumber(x: any): x is number {
-  return typeof x === "number";
-}
+import "./login.css";
+import Block from "../../core/block";
+import { ValidationError } from "./../../components/input/validationError/validationError";
 
-function isString(x: any): x is string {
-  return typeof x === "string";
-}
+interface ServerErrorPageProps {}
 
-function padLeft(value: string, padding: string | number) {
-  if (isNumber(padding)) {
-    return Array(padding + 1).join(" ") + value;
+export class LoginPage extends Block {
+  constructor(props: ServerErrorPageProps) {
+    super({
+      ...props,
+
+      onFocus: () => {
+        console.log("focus event");
+      },
+      onBlur: () => console.log("blur event"),
+    });
   }
-  if (isString(padding)) {
-    return padding + value;
+
+  render(): string {
+    return `<main class="main">
+    <form class="form">
+      <h1 class="form__title">{{loginButtonText}}</h1>
+ 
+      {{{ Input type='text' name='login' placeholder='ivanivanov' onChange=onChange onFocus=onFocus onBlur=onBlur }}}
+
+ 
+      <div class="form__row">
+      <label class="form__label">Пароль
+      {{{ Input type='password' name='password' placeholder='••••••••••••' onChange=onChange onFocus=onFocus onBlur=onBlur }}}
+      </label>
+      {{{ ValidationError ref="passwordValidationError" }}}
+      </div>
+      {{{ Button text="Авторизоваться" }}}
+      {{{ NavLink text='Нет аккаунта?' href='/register' }}}
+      </form>
+  </main>`;
   }
-  throw new Error(`Expected string or number, got '${padding}'.`);
 }
