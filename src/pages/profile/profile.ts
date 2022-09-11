@@ -1,50 +1,87 @@
 import "./profile.css";
 import Block from "../../core/block";
+import template from './profile.hbs'
+import {Input} from "../../components/input/input";
+import NavLink from "../../components/navLink";
 
-interface ProfilePagePageProps {}
+interface ProfilePagePageProps {
+}
 
 export class ProfilePage extends Block {
   constructor(props: ProfilePagePageProps) {
-    super({
+    super('div', {
       ...props,
     });
   }
 
-  render(): string {
-    return `
-    <main class="main">
-    
-    <div class="backarrow">
-        <img src="../../img/back-arrow.png" class="backarrow__image">
-    </div>
-    <div class="profile">
-         <div class="avatar">
-         <img src="../../img/avatar-placeholder.png" class="backarrow__image">
-          </div>
-    
-    <form class="form">
-    <h1 class="form__title">Иван</h1>
-      {{{ Input type='email' name='email' label='Почта' placeholder='pochta@yandex.ru' }}}
-      {{{ Devider }}}
-      {{{ Input type='text' name='login' label='Логин' placeholder='ivanivanov' }}}
-        {{{ Devider }}}
-      {{{ Input type='text' name='name' label='Имя' placeholder='Иван' }}}
-        {{{ Devider }}}
-      {{{ Input type='text' name='subname' label='Фамилия' placeholder='Иванов' }}}
-        {{{ Devider }}}
-      {{{ Input type='text' name='chat-name' label='Имя в чате' placeholder='Иван' }}}
-        {{{ Devider }}}
-      {{{ Input type='tel' name='telephone' label='Телефон' placeholder='+7(909)9673030' }}}
-    </form>
-    <div class="profile__links">
-       {{{ NavLink text='Изменить данные' href='/change-profile' }}}
-        {{{ Devider }}}
-        {{{ NavLink text='Изменить пароль' href='/change-password' }}}
-         {{{ Devider }}}
-          {{{ NavLink text='Выйти' href='/' }}}
-    </div>
-    </div>
-    
-    </main>`;
+  init() {
+
+    this.children.inputEmail = new Input({
+      type: "email",
+      placeholder: "pochta@yandex.ru",
+      value: "",
+      label: 'Почта',
+      name: "email"
+    });
+
+    this.children.inputLogin = new Input({
+      type: "text",
+      placeholder: "ivanivanov",
+      value: "",
+      label: 'Логин',
+      name: "login"
+    });
+
+    this.children.inputName = new Input({
+      type: "text",
+      placeholder: "Иван",
+      value: "",
+      label: 'Имя',
+      name: "first_name"
+    });
+
+    this.children.inputSubname = new Input({
+      type: "text",
+      placeholder: "Иванов",
+      value: "",
+      label: 'Фамилия',
+      name: "second_name"
+    });
+
+    this.children.inputChatName = new Input({
+      type: "text",
+      placeholder: "ivanivanov",
+      value: "",
+      label: 'Имя в чате',
+      name: "chat_name"
+    });
+
+    this.children.inputTel = new Input({
+      type: "text",
+      placeholder: "+7 (909) 967 30 3",
+      value: "",
+      label: 'Телефон',
+      name: "phone"
+    });
+
+    this.children.navLinkEditInfo = new NavLink({
+      text: 'Изменить данные',
+      href: '/login'
+    })
+
+    this.children.navLinkEditPass = new NavLink({
+      text: 'Изменить пароль',
+      href: '/login'
+    })
+
+    this.children.navLinkEditExit = new NavLink({
+      text: 'Выйти',
+      href: '/exit'
+    })
+  }
+
+  render(): DocumentFragment {
+    console.log(template)
+    return this.compile(template, this.props);
   }
 }

@@ -1,45 +1,53 @@
 import Block from "../../core/block";
-
+import template from './input.hbs'
 import "./input.css";
 
 interface InputProps {
-  onChange?: () => void;
-  onFocus?: () => void;
-  onBlur?: () => void;
+  onChange?: (e: any) => void;
+  onFocus?: (e: any) => void;
+  onBlur?: (e: any) => void;
   type?: "text" | "password" | "email";
   placeholder?: string;
   value?: string;
   error?: string;
   name?: string;
+  label?: string;
+  isError?: boolean;
 }
 
 export class Input extends Block {
+
+  private controlType = 'Input';
+
   constructor({
-    onChange,
-    onFocus,
-    onBlur,
-    type = "text",
-    error,
-    placeholder,
-    value,
-    name,
-  }: InputProps) {
-    super({
+                onChange,
+                onFocus,
+                onBlur,
+                type = "text",
+                error,
+                placeholder,
+                value,
+                name,
+                label,
+                isError
+              }: InputProps) {
+    super('div', {
       type,
       placeholder,
       name,
       value,
       error,
-      events: { input: onChange, blur: onBlur, focus: onFocus },
+      label,
+      isError,
+      events: {input: onChange, focusout: onBlur, focusin: onFocus},
     });
   }
 
-  protected render(): string {
-    return `
-    <div class="input">
-    <input class="input__input" type="{{type}}" placeholder="{{placeholder}}" value="{{value}}">
-    <div class="input__error">{{#if error}}{{error}}{{/if}}</div>
-  </div>
-    `;
+  render() {
+    return this.compile(template, this.props);
+  }
+
+  getControlType() {
+    return this.controlType;
   }
 }

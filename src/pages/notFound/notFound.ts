@@ -1,21 +1,20 @@
 import Block from "../../core/block";
 import "./notFound.css";
+import template from './notFound.hbs';
 
-interface NotFoundPageProps {}
+
+interface NotFoundPageProps {
+}
 
 export class NotFoundPage extends Block {
   constructor(props: NotFoundPageProps) {
-    super({
-      ...props,
-    });
+    super('div', props);
   }
 
-  render(): string {
-    return `<main class="main">
-    <div class="content">
-      <h1 class="content__title">404</h1>
-      <p class="content__subtitle">Не туда попали</p>
-    </div>
-  </main>`;
+  init() {
+  }
+
+  render() {
+    return this.compile(template, this.props);
   }
 }

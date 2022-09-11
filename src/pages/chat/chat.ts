@@ -1,21 +1,25 @@
 import "./chat.css";
 import Block from "../../core/block";
+import template from './chat.hbs'
+import ChatList from "../../components/chatList";
+import MessageList from "../../components/messageList";
 
-interface ChatPageProps {}
+interface ChatPageProps {
+}
 
 export class ChatPage extends Block {
   constructor(props: ChatPageProps) {
-    super({
+    super('div', {
       ...props,
     });
   }
 
-  render(): string {
-    return `<main class="main">
-    <div class="chat-container"> 
-        {{{ ChatList }}}
-    {{{ MessageList }}}</div>
-</main>
-{{{ NavLink href='/' text='Назад' }}}`;
+  init() {
+    this.children.chatList = new ChatList()
+    this.children.messageList = new MessageList()
+  }
+
+  render(): DocumentFragment {
+    return this.compile(template, this.props);
   }
 }

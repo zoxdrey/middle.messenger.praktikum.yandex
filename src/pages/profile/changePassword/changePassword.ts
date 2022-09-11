@@ -1,38 +1,82 @@
 import "../profile.css";
 import Block from "../../../core/block";
+import template from "./changePassword.hbs";
+import {Input} from "../../../components/input/input";
+import Button from "../../../components/button";
+import {Validator} from "../../../heplers/validator/validator";
 
-interface ChangePasswordPageProps {}
+interface ChangePasswordPageProps {
+}
 
 export class ChangePasswordPage extends Block {
+
+
+  formObj: any = {};
+  validator = new Validator();
+
   constructor(props: ChangePasswordPageProps) {
-    super({
+    super('div', {
       ...props,
     });
   }
 
-  render(): string {
-    return `<main class="main">
-  
-    <div class="backarrow">
-        <img src="../../../img/back-arrow.png" class="backarrow__image">
-    </div>
-    <div class="profile">
-         <div class="avatar">
-         <img src="../../../img/avatar-placeholder.png" class="backarrow__image">
-          </div>
-   
-   <form class="form">
-   <h1 class="form__title">Иван</h1>
-       {{{ Input type='password' name='password' label='Старый пароль' placeholder='•••••••••' }}}
-       {{{ Devider }}}
-       {{{ Input type='password' name='oldpassword' label='Новый пароль' placeholder='•••••••••' }}}
-       {{{ Devider }}}
-       {{{ Input type='password' name='newpassword' label='Повторите новый пароль' placeholder='•••••••••' }}}
-       {{{ Button text="Сохранить" }}}
-   </form>
-    </div>
-    
-  </main>
-`;
+  init() {
+    this.children.inputPassword = new Input({
+      onChange: (e) => {
+        this.formObj[e.target.name] = e.target.value;
+      },
+      onFocus: (e) => {
+      },
+      onBlur: (e) => {
+        this.validator.inputValidate(e.target, this.children.inputPassword);
+      },
+      type: "text",
+      placeholder: "••••••••••••",
+      name: "password",
+      label: 'Пароль'
+    });
+
+    this.children.inputOldPassword = new Input({
+      onChange: (e) => {
+        this.formObj[e.target.name] = e.target.value;
+      },
+      onFocus: (e) => {
+      },
+      onBlur: (e) => {
+        this.validator.inputValidate(e.target, this.children.inputOldPassword);
+      },
+      type: "text",
+      placeholder: "••••••••••••",
+      name: "oldpassword",
+      label: 'Старый пароль'
+    });
+
+    this.children.inputNewPassword = new Input({
+      onChange: (e) => {
+        this.formObj[e.target.name] = e.target.value;
+      },
+      onFocus: (e) => {
+      },
+      onBlur: (e) => {
+        this.validator.inputValidate(e.target, this.children.inputNewPassword);
+      },
+      type: "text",
+      placeholder: "••••••••••••",
+      name: "newpassword",
+      label: 'Новый пароль'
+    });
+
+    this.children.buttonChangePassword = new Button({
+      text: "Сохранить",
+      onClick: (e) => {
+        e?.preventDefault();
+        this.validator.formValidate(this.children)
+        console.log(this.formObj);
+      }
+    })
+  }
+
+  render(): DocumentFragment {
+    return this.compile(template, this.props);
   }
 }

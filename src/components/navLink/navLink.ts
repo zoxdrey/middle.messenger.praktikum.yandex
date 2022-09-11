@@ -1,6 +1,7 @@
 import Block from "../../core/block";
 
 import "./navLink.css";
+import template from "./navLink.hbs";
 
 interface NavLinkProps {
   text: string;
@@ -8,14 +9,11 @@ interface NavLinkProps {
 }
 
 export class NavLink extends Block {
-  constructor({ text, href }: NavLinkProps) {
-    super({ text, href });
+  constructor({text, href}: NavLinkProps) {
+    super('div', {text, href});
   }
 
-  protected render(): string {
-    // language=hbs
-    return `
-    <a href='{{href}}' class='link'>{{text}}</a> 
-    `;
+  render() {
+    return this.compile(template, this.props)
   }
 }

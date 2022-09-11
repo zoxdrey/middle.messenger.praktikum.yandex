@@ -1,21 +1,18 @@
 import Block from "../../core/block";
-
 import "./button.css";
+import template from "./button.hbs";
 
 interface ButtonProps {
   text: string;
-  onClick: () => void;
+  onClick: (e?: MouseEvent) => void;
 }
 
 export class Button extends Block {
-  constructor({ text, onClick }: ButtonProps) {
-    super({ text, events: { click: onClick } });
+  constructor({text, onClick}: ButtonProps) {
+    super('div', {text, events: {click: onClick}});
   }
 
-  protected render(): string {
-    // language=hbs
-    return `
-    <button class="button" >{{text}}</button>
-    `;
+  render() {
+    return this.compile(template, this.props)
   }
 }
