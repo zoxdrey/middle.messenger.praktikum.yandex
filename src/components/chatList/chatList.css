@@ -7,23 +7,23 @@
   height: 100%;
 }
 
-.chat-list__nav-link {
+.chat-list-nav-link {
   text-align: right;
   height: 32px;
 }
 
-.chat-list__search {
+.chat-list-search {
   height: 32px;
   background-color: var(--color-light-gray);
   text-align: center;
 }
 
-.chat-list__items {
-  margin: 20px 0 0 0;
+.chat-list-items {
+  margin: 20px 0 0;
   padding: 0;
 }
 
-.chat-list__item {
+.chat-list-item {
   height: 70px;
   list-style-type: none;
   display: flex;
@@ -32,16 +32,8 @@
   align-items: center;
 }
 
-.chat-list__item-image {
+.chat-list-item-image {
   width: 55px;
   height: 55px;
   background-color: var(--color-light-gray);
-}
-
-.chat-list__item-title {
-
-}
-
-.chat-list__item-subtitle {
-
 }

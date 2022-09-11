@@ -1,6 +1,5 @@
 import Block from "../../core/block";
-import template from './input.hbs'
-import "./input.css";
+import template from "./input.hbs";
 
 interface InputProps {
   onChange?: (e: any) => void;
@@ -16,22 +15,21 @@ interface InputProps {
 }
 
 export class Input extends Block {
-
-  private controlType = 'Input';
+  private controlType = "Input";
 
   constructor({
-                onChange,
-                onFocus,
-                onBlur,
-                type = "text",
-                error,
-                placeholder,
-                value,
-                name,
-                label,
-                isError
-              }: InputProps) {
-    super('div', {
+    onChange,
+    onFocus,
+    onBlur,
+    type = "text",
+    error,
+    placeholder,
+    value,
+    name,
+    label,
+    isError,
+  }: InputProps) {
+    super("div", {
       type,
       placeholder,
       name,
@@ -39,7 +37,7 @@ export class Input extends Block {
       error,
       label,
       isError,
-      events: {input: onChange, focusout: onBlur, focusin: onFocus},
+      events: { input: onChange, focusout: onBlur, focusin: onFocus },
     });
   }
 

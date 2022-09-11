@@ -5,13 +5,13 @@
   width: 1400px;
 }
 
-.message-list__header {
+.message-list-header {
   font-weight: bold;
   width: 100%;
   text-align: center;
 }
 
-.message-list__items {
+.message-list-items {
   display: flex;
   gap: 30px;
   list-style-type: none;
@@ -19,14 +19,14 @@
   flex-direction: column-reverse;
 }
 
-.message__item {
+.message-item {
   max-width: 400px;
   background-color: var(--color-gray);
   padding: 20px;
   gap: 30px;
 }
 
-.message-list__input {
+.message-list-input {
   justify-self: end;
   height: 32px;
 }

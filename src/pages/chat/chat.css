@@ -1,4 +1,4 @@
-@import url(../../styles.css);
+@import "../../styles.css";
 
 .chat-container {
   display: flex;
@@ -8,7 +8,6 @@
 
 .chat-list {
   background-color: var(--color-main-black);
-
 }
 
 .message-list {

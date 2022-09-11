@@ -1,4 +1,4 @@
-@import url(../../styles.css);
+@import "../../styles.css";
 
 .content {
   display: flex;
@@ -7,23 +7,23 @@
   align-items: center;
 }
 
-.content__title {
+.content-title {
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
   line-height: 40px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
 }
 
-.content__subtitle {
+.content-subtitle {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  margin: 0 0 70px 0;
+  margin: 0 0 70px;
   padding: 0;
 }

@@ -1,22 +1,19 @@
 import "./login.css";
 import Block from "../../core/block";
-import template from './login.hbs'
-import {Input} from "../../components/input/input";
+import template from "./login.hbs";
+import { Input } from "../../components/input/input";
 import Button from "../../components/button";
 import NavLink from "../../components/navLink";
-import {Validator} from "../../heplers/validator/validator";
+import { Validator } from "../../heplers/validator/validator";
 
-interface LoginPageProps {
-}
+interface LoginPageProps {}
 
 export class LoginPage extends Block {
-
   formObj: any = {};
   validator = new Validator();
 
-
   constructor(props: LoginPageProps) {
-    super('div', props);
+    super("div", props);
   }
 
   init() {
@@ -24,8 +21,7 @@ export class LoginPage extends Block {
       onChange: (e) => {
         this.formObj[e.target.name] = e.target.value;
       },
-      onFocus: (e) => {
-      },
+      onFocus: (e) => {},
       onBlur: (e) => {
         this.validator.inputValidate(e.target, this.children.inputLogin);
       },
@@ -34,15 +30,14 @@ export class LoginPage extends Block {
       value: "",
       error: "text",
       name: "login",
-      label: 'Логин'
+      label: "Логин",
     });
 
     this.children.inputPassword = new Input({
       onChange: (e) => {
         this.formObj[e.target.name] = e.target.value;
       },
-      onFocus: (e) => {
-      },
+      onFocus: (e) => {},
       onBlur: (e) => {
         this.validator.inputValidate(e.target, this.children.inputPassword);
       },
@@ -51,27 +46,27 @@ export class LoginPage extends Block {
       value: "",
       error: "text",
       name: "password",
-      label: 'Пароль'
+      label: "Пароль",
     });
 
     this.children.button = new Button({
-      text: 'Войти',
+      text: "Войти",
       onClick: (e: MouseEvent | undefined) => {
         if (e) {
-          e.preventDefault()
-          this.validator.formValidate(this.children)
+          e.preventDefault();
+          this.validator.formValidate(this.children);
           console.log(this.formObj);
         }
-      }
-    })
+      },
+    });
 
     this.children.navLink = new NavLink({
-      text: 'Зарегистрироваться',
-      href: '/register'
-    })
+      text: "Зарегистрироваться",
+      href: "/register",
+    });
   }
 
   render() {
-    return this.compile(template, this.props)
+    return this.compile(template, this.props);
   }
 }

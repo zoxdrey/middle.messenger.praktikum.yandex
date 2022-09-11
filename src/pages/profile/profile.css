@@ -1,11 +1,9 @@
-@import url(../../styles.css);
+@import "../../styles.css";
 
 .backarrow {
   align-self: flex-start;
   margin-left: 20px;
 }
-
-@import url(../../styles.css);
 
 .profile {
   display: flex;
@@ -13,14 +11,15 @@
   justify-content: center;
   align-items: center;
 }
-.form__title {
+
+.form-title {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  margin: 0 0 40px 0;
+  margin: 0 0 40px;
 }
 
 .form {
@@ -31,9 +30,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 40px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   width: 280px;
 }
 
@@ -42,9 +41,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 13px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   background-color: var(--color-dark-gray);
   border: none;
   width: 280px;
@@ -53,7 +52,7 @@
   cursor: pointer;
 }
 
-.form__input {
+.form-input {
   text-align: right;
   max-width: 280px;
   width: 280px;
@@ -63,20 +62,16 @@
   font-style: normal;
   font-weight: 500;
   line-height: 13px;
-  letter-spacing: 0em;
-  padding: 7px 0 7px 0;
+  letter-spacing: 0;
+  padding: 7px 0;
   color: var(--color-main-white);
 }
 
-.form__label {
+.form-label {
   align-items: center;
   display: flex;
-  align-items: center;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
   line-height: 9px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
   color: var(--color-main-white);
   margin: 0;
@@ -90,20 +85,20 @@
   margin-bottom: 16px;
 }
 
-.form__row {
+.form-row {
   text-align: left;
   display: flex;
   max-width: 280px;
 }
 
-.form__row:last-of-type {
+.form-row:last-of-type {
   margin-bottom: 160px;
-}
-
-.link:last-of-type {
-  color: red;
 }
 
 .link {
   text-align: left;
+}
+
+.link:last-of-type {
+  color: red;
 }
