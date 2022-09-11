@@ -1,4 +1,6 @@
 module.exports = {
+  // eslint-disable-next-line quotes
   layouts: "src/layouts",
-  partials: "src/components",
+  // eslint-disable-next-line quotes
+  partials: "src/components/",
 };

@@ -1,0 +1,16 @@
+@import "../../styles.css";
+
+.chat-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.chat-list {
+  background-color: var(--color-main-black);
+}
+
+.message-list {
+  background-color: var(--color-dark-gray);
+  flex-grow: 1;
+}

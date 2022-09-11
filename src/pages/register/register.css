@@ -1,13 +1,13 @@
-@import url(../../styles.css);
+@import "../../styles.css";
 
-.form__title {
+.form-title {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  margin: 0 0 40px 0;
+  margin: 0 0 40px;
 }
 
 .form {
@@ -18,9 +18,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 40px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   width: 280px;
 }
 
@@ -29,9 +29,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 13px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   background-color: var(--color-dark-gray);
   border: none;
   width: 280px;
@@ -40,7 +40,7 @@
   cursor: pointer;
 }
 
-.form__input {
+.form-input {
   max-width: 280px;
   width: 280px;
   border: none;
@@ -49,31 +49,30 @@
   font-style: normal;
   font-weight: 500;
   line-height: 13px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
-  padding: 7px 0 7px 0;
+  padding: 7px 0;
   border-bottom: solid 1px var(--color-main-white);
   color: var(--color-main-white);
   margin-bottom: 16px;
 }
 
-.form__label {
+.form-label {
   text-align: start;
   font-size: 9px;
   font-style: normal;
   font-weight: 500;
   line-height: 9px;
-  letter-spacing: 0em;
-  text-align: left;
+  letter-spacing: 0;
   color: var(--color-main-white);
 }
 
-.form__row {
+.form-row {
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
-.form__row:last-of-type {
+.form-row:last-of-type {
   margin-bottom: 160px;
 }

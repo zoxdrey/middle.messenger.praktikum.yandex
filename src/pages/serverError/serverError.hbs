@@ -1,14 +1,7 @@
----
-stylesheets:
-- ./serverError.css
----
-
-{{!< main}}
-
 <main class="main">
-  <div class="content">
-    <h1 class="content__title">500</h1>
-    <p class="content__subtitle">Мы уже фиксим</p>
-    {{> navLink href='../../index.hbs' text='Назад к чатам'}}
-  </div>
-</main>
+    <div class="content">
+      <h1 class="content-title">500</h1>
+      <p class="content-subtitle">Мы уже фиксим</p>
+      {{{ NavLink href='/' text='Назад к чатам' }}}
+    </div>
+  </main>
